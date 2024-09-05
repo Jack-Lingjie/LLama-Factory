@@ -202,7 +202,7 @@ def get_train_args(args: Optional[Dict[str, Any]] = None) -> _TRAIN_CLS:
 
     if training_args.do_train and data_args.dataset is None:
         raise ValueError("Please specify dataset for training.")
-
+    print(f"training_args.do_eval:{training_args.do_eval}, training_args.do_predict:{training_args.do_predict}")
     if (training_args.do_eval or training_args.do_predict) and (
         data_args.eval_dataset is None and data_args.val_size < 1e-6
     ):

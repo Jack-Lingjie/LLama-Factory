@@ -4,21 +4,21 @@ model_name_or_path: /mnt/lingjiejiang/textual_aesthetics/model_checkpoint/huggin
 ### method
 stage: sft
 do_train: true
-finetuning_type: lora
+finetuning_type: full
 flash_attn: fa2
 deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
 dataset: glan_v2_glanchat_jsonl_v2
 template: default
-cutoff_len: 32
+cutoff_len: 2048
 # max_samples: 135000
 overwrite_cache: true
 preprocessing_num_workers: 16
 streaming: true
 
 ### output
-output_dir: saves/glan_v2_glanchat_v2_8b_2048_default_template/fullft_lr5e6_e3_fx/sft
+output_dir: /mnt/lingjiejiang/textual_aesthetics/exp/saves/glan_v2_glanchat_v2_8b_2048_default_template/fullft_lr5e6_e3_fx_debug/sft
 logging_steps: 10
 save_steps: 500
 plot_loss: true
@@ -29,7 +29,7 @@ per_device_train_batch_size: 1
 gradient_accumulation_steps: 8
 learning_rate: 5.0e-6
 # num_train_epochs: 5.0
-max_steps: 10
+max_steps: 45000
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
