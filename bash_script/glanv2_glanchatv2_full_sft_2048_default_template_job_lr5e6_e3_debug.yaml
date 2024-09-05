@@ -16,6 +16,7 @@ cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
 streaming: true
+split_batches: True
 
 ### output
 output_dir: /mnt/lingjiejiang/textual_aesthetics/exp/saves/glan_v2_glanchat_v2_8b_2048_default_template/fullft_lr5e6_e3_fx_debug/sft
